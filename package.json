@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "@akala/openclaw-forge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The OpenClaw Forge is a BMAD-powered module that serves as an end-to-end agent factory for the OpenClaw platform. It takes users from initial concept -- \"I want an agent that does X\" -- through to a fully deployable, production-hardened multi-agent workspace complete with all artifacts: AGENTS.md, SOUL.md, USER.md, MEMORY.md, skills, openclaw.json configuration fragments, orchestration patterns, guardrails, and resilience configuration.",
   "keywords": [
     "bmad",
