@@ -1,0 +1,15 @@
+change_type,primary_artifact,secondary_artifacts,propagation_rule
+persona_change,SOUL.md,"AGENTS.md,USER.md,REVIEW.md",Update directives and interaction patterns to match new persona
+name_change,SOUL.md,"AGENTS.md,USER.md,MEMORY.md,openclaw.json,orchestration.md",Replace agent name references across all artifacts
+skill_addition,skills/,AGENTS.md,Add skill reference to AGENTS.md directives
+skill_removal,skills/,"AGENTS.md,tool-policies.md",Remove skill references and associated tool policies
+skill_modification,skills/,"AGENTS.md,tool-policies.md",Update skill references and verify tool policy alignment
+communication_style_change,SOUL.md,"USER.md,REVIEW.md",Update interaction patterns and feedback capture style
+boundary_change,AGENTS.md,"tool-policies.md,REVIEW.md,SOUL.md",Propagate new boundaries to policies and self-correction
+channel_change,openclaw.json,"USER.md,AGENTS.md",Update channel-specific interaction patterns
+memory_config_change,memory-config.md,"MEMORY.md,AGENTS.md",Update memory scaffolds and recall directives
+tool_policy_change,tool-policies.md,"AGENTS.md,skills/",Verify tool restrictions align with skill requirements
+agent_addition,AGENTS.md,"SOUL.md,USER.md,MEMORY.md,skills/,openclaw.json,orchestration.md",Create full artifact set for new agent
+agent_removal,AGENTS.md,"SOUL.md,USER.md,MEMORY.md,skills/,openclaw.json,orchestration.md,failover.md",Remove all artifact references and update orchestration
+failover_change,failover.md,"openclaw.json,AGENTS.md",Update resilience configuration and agent awareness
+orchestration_change,orchestration.md,"AGENTS.md,openclaw.json",Update communication patterns and routing rules

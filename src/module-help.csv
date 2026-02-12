@@ -1,28 +1,15 @@
-# module-help.csv - Workflow Menu Configuration - REMOVE THESE COMMENTS
-# This example file defines all workflows in your module for the BMAD Help system
-#
-# Columns:
-# - module: Your module code (from module.yaml)
-# - phase: 'anytime' OR numbered phases `1-discover 2-define 3-build 4-ship` if sequential or named phases without a number if the sequence only matters within a phase but the phase order itself is stand alone or does not matter.
-# - name: Display name of the workflow
-# - code: 2-letter menu code (used for quick commands like /module:code:workflow-name)
-# - sequence: Order within phase (10, 20, 30...) IF ORDER MATTERS - for anytime or ordering not mattering, do not give it a sequence number
-# - workflow-file: Path to workflow.yaml or workflow.md
-# - command: Full command syntax (bmad:module-code:workflow-name)
-# - required: true/false - whether this workflow must complete before later phases
-# - agent: Agent name from agents/*.agent.yaml files
-# - options: Additional workflow options (e.g., "Create Mode")
-# - description: Brief description of what the workflow does
-# - output-location: Variable name from module.yaml for where outputs go
-# - outputs: Expected output artifact names
-#
-# IMPORTANT: Empty phase = anytime (universal tools work regardless of workflow state)
-#
 module,phase,name,code,sequence,workflow-file,command,required,agent,options,description,output-location,outputs,
-# anytime workflows - available at any time
-code,anytime,Example Workflow,EW,10,_bmad/code/workflows/example/workflow.yaml,bmad-code-example-workflow,false,example-agent,Create Mode,"An example anytime workflow that can be run anytime",output_folder,"example output",
-# numbered phases - sequential workflow stages
-code,1-discover,Discovery Step,DS,10,_bmad/code/workflows/discovery/workflow.yaml,bmad-code-discovery,false,example-agent,Create Mode,"First phase of sequential workflow",output_folder,"discovery document",
-code,2-define,Definition Step,DS,10,_bmad/code/workflows/definition/workflow.yaml,bmad-code-definition,true,example-agent,Create Mode,"Required step before moving to next phase",output_folder,"definition document",
-code,3-build,Build Step,BS,10,_bmad/code/workflows/build/workflow.yaml,bmad-code-build,true,example-agent,Create Mode,"Build and implement phase",output_folder,"implementation",
-code,4-ship,Ship Step,SS,10,_bmad/code/workflows/ship/workflow.yaml,bmad-code-ship,false,example-agent,Create Mode,"Final delivery and release phase",output_folder,"release",
+ocf,anytime,Chat with Forge Master,CFM,,,ocf_chat_fm,false,forge-master,Chat Mode,Strategic discussion about agent system architecture,,,
+ocf,anytime,Chat with Soul Smith,CSS,,,ocf_chat_ss,false,soul-smith,Chat Mode,Creative discussion about agent personas and identity,,,
+ocf,anytime,Chat with Gear Wright,CGW,,,ocf_chat_gw,false,gear-wright,Chat Mode,Technical discussion about skills config and assembly,,,
+ocf,phase-1,Create Agent Brief,AB,10,_bmad/ocf/workflows/create-agent-brief/workflow.md,ocf_agent_brief,false,forge-master,Create Mode,Guided discovery of a new OpenClaw agent system,ocf_output,brief,
+ocf,phase-1,Design Orchestration,DO,20,_bmad/ocf/workflows/design-orchestration/workflow.md,ocf_orchestration,false,forge-master,Create Mode,Design multi-agent communication and routing patterns,ocf_output,design,
+ocf,phase-2,Create Agent System,CS,10,_bmad/ocf/workflows/create-agent-system/workflow.md,ocf_agent_system,false,soul-smith,Create Mode,Generate complete workspace from a brief,ocf_output,workspace,
+ocf,phase-2,Create Single Agent,SA,20,_bmad/ocf/workflows/create-single-agent/workflow.md,ocf_single_agent,false,soul-smith,Create Mode,Streamlined single agent workspace creation,ocf_output,workspace,
+ocf,phase-2,Create Skill,SK,30,_bmad/ocf/workflows/create-skill/workflow.md,ocf_skill,false,gear-wright,Create Mode,Generate a complete OpenClaw skill,ocf_output,skill,
+ocf,phase-3,Edit Agent System,EA,10,_bmad/ocf/workflows/edit-agent-system/workflow.md,ocf_edit_system,false,soul-smith,Edit Mode,Modify existing workspaces with coherence maintenance,ocf_output,workspace,
+ocf,phase-3,Production Hardening,PH,20,_bmad/ocf/workflows/configure-production-hardening/workflow.md,ocf_hardening,false,gear-wright,Create Mode,Layer production features onto a workspace,ocf_output,config,
+ocf,phase-3,Validate Workspace,VW,30,_bmad/ocf/workflows/validate-workspace/workflow.md,ocf_validate,false,gear-wright,Validate Mode,Check workspace for internal consistency,ocf_output,report,
+ocf,phase-4,Export Config,EC,10,_bmad/ocf/workflows/export-config/workflow.md,ocf_export_config,false,gear-wright,Export Mode,Extract openclaw.json fragments for merge,ocf_output,config,
+ocf,phase-4,Package Export,PE,20,_bmad/ocf/workflows/package-export/workflow.md,ocf_package_export,false,gear-wright,Export Mode,Bundle workspace into portable zip + setup prompt,ocf_output,package,
+ocf,phase-4,Package Import,PI,30,_bmad/ocf/workflows/package-import/workflow.md,ocf_package_import,false,gear-wright,Import Mode,Receive and install an OCF package,,workspace,

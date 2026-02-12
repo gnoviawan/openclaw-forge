@@ -1,0 +1,15 @@
+rule_id,source_artifact,target_artifact,check_type,description,severity
+CR001,SOUL.md,AGENTS.md,alignment,Persona traits in SOUL.md must align with behavioral directives in AGENTS.md,critical
+CR002,AGENTS.md,skills/,reference,Every skill referenced in AGENTS.md must exist as a file in skills/,critical
+CR003,skills/,AGENTS.md,reference,Every skill file must be referenced in the parent AGENTS.md,warning
+CR004,SOUL.md,USER.md,alignment,Communication style in SOUL.md must match interaction patterns in USER.md,important
+CR005,AGENTS.md,tool-policies.md,coverage,Every agent must have tool policies defined,critical
+CR006,AGENTS.md,MEMORY.md,alignment,Memory directives must match agent capabilities and skill needs,important
+CR007,AGENTS.md,REVIEW.md,alignment,Self-correction patterns must reference actual agent behaviors,important
+CR008,openclaw.json,AGENTS.md,reference,All agents in openclaw.json must have corresponding AGENTS.md files,critical
+CR009,openclaw.json,skills/,reference,Skill bindings in openclaw.json must reference existing skill files,critical
+CR010,SOUL.md,SOUL.md,internal,Persona traits must be internally consistent (no contradictions),important
+CR011,orchestration.md,AGENTS.md,reference,All agents in orchestration patterns must exist in the workspace,critical
+CR012,failover.md,AGENTS.md,reference,Failover targets must reference existing agents,critical
+CR013,MEMORY.md,memory-config.md,alignment,Memory scaffolds must match backend configuration,important
+CR014,AGENTS.md,orchestration.md,alignment,Agent communication capabilities must match orchestration requirements,important
